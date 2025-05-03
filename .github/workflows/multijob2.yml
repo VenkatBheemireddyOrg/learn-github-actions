@@ -1,0 +1,18 @@
+name: Setting a debug message
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  stage1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "echo "::debug::Set the Octocat variable"
+  stage2:
+    needs: stage1
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "stage2 step"
+  stage3:
+    needs: stage1
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "stage3 step"
