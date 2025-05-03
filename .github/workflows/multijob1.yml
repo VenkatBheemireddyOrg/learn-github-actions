@@ -1,11 +1,11 @@
-name: Multi Job
+name: Setting a notice message
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
   stage1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "stage1 step"
+      - run: echo "::notice file=test.sh,line=1,endLine=10,title=Notice::This is a notice msg"
 
   stage2:
     needs: stage1
